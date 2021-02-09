@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Grid from './components/Grid';
+import Translator from './components/Translator';
 
 function App() {
   return (
     <div className="App">
-      <Grid />
+      <Translator />
     </div>
   );
 }
