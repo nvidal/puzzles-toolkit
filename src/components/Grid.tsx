@@ -1,8 +1,8 @@
 import GridSymbol from "./GridSymbol";
 
 declare interface GridProps { 
-    gridState :{ id: string,  active:boolean}[], 
-    onActivateChange: (id: string, value: boolean) => void
+    gridState : boolean[], 
+    onActivateChange: (id: number) => void
 };
 
 
@@ -17,8 +17,8 @@ const Grid = ({ gridState, onActivateChange }: GridProps) => {
     }
 
     return (
-        <div style={braileStyles}>
-                {gridState.map( el => <GridSymbol id={el.id} onActivateChange={onActivateChange}/> )}
+        <div>
+                {gridState.map( (el, idx) => <GridSymbol id={idx} value={el} onActivateChange={onActivateChange}/> )}
         </div>
 
     )

@@ -1,10 +1,12 @@
 
-
-const Result = () => {
+declare interface Props { 
+    value : string
+};
+const Result = ({value}: Props) => {
 
     return (
         <div>
-            <h1>A</h1>
+            <h1>{value}</h1>
         </div>
     )
 }
