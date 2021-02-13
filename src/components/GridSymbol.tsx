@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
 declare interface GridSymbolProps { 
-    id: string,
-    onActivateChange: (id: string, value: boolean) => void
+    id: number,
+    value: boolean,
+    onActivateChange: (id: number) => void
 };
-const GridSymbol = ({id, onActivateChange}: GridSymbolProps) => {
+const GridSymbol = ({id, value, onActivateChange}: GridSymbolProps) => {
 
-    const [selected, setSelect] = useState(false);
+    const [selected, setSelected] = useState(value);
     let styles= {
         backgroundColor: (selected ? "blue" : "pink"),
         borderRadius: "50px",
@@ -14,8 +15,8 @@ const GridSymbol = ({id, onActivateChange}: GridSymbolProps) => {
         height: "40px"
     }
     return (
-        <div>
-            <div onClick={() => {setSelect(!selected); onActivateChange(id, !selected)}} style={styles} id={id} />
+        <div id={id.toString()}>
+            <div onClick={() => {setSelected(!selected); onActivateChange(id)}} style={styles}/>
         </div>
 
     )
