@@ -17,13 +17,15 @@ const Grid = ({ gridState, onActivateChange }: GridProps) => {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        padding: 80px;
+        box-sizing: border-box;
+        padding: 20px;
+        row-gap: 5px;
 
     `;
 
 
     return (
-        <GridContainer>{gridState.map( (el, idx) => <GridSymbol id={idx} value={el} onActivateChange={onActivateChange} /> )}</GridContainer>
+        <GridContainer>{gridState.map( (el, idx) => <GridSymbol key={idx} id={idx} value={el} onActivateChange={onActivateChange} /> )}</GridContainer>
     )
 }
 

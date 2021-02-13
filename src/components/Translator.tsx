@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import Grid from "./Grid";
 import Result from "./Result";
 import styled from 'styled-components';
+import Calculator from "../services/Calculator";
 
-
-const calculateResult = () => "A";
 
 const Container = styled.div `
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 `;
 
 const Translator = () => {
@@ -23,7 +22,7 @@ const Translator = () => {
         setBraileSymbol(copy);
         console.log(braileSymbol);
 
-        setResult(calculateResult());
+        setResult(Calculator.calculateResult(braileSymbol));
     };
     
 

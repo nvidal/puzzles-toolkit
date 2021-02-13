@@ -21,7 +21,7 @@ const GridSymbol = ({id, value, onActivateChange}: GridSymbolProps) => {
         `;
 
     return (
-        <div id={id.toString()}>
+        <div>
             <BrailleControl onClick={() => {setSelected(!selected); onActivateChange(id)}}/>
         </div>
 
