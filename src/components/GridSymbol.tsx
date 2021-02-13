@@ -6,6 +6,7 @@ declare interface GridSymbolProps {
     value: boolean,
     onActivateChange: (id: number) => void
 };
+
 const GridSymbol = ({id, value, onActivateChange}: GridSymbolProps) => {
 
     const [selected, setSelected] = useState(value);
@@ -18,6 +19,7 @@ const GridSymbol = ({id, value, onActivateChange}: GridSymbolProps) => {
             box-shadow: ${props => selected ? "2px 2px 4px #C0C2CE, -2px -2px 8px #FFFFFF, inset 5px 5px 10px rgba(255, 255, 255, 0.4)" : "inset -5px -5px 16px #FFFFFF"};
             transition: all ease-in 500ms;
         `;
+
     return (
         <div id={id.toString()}>
             <BrailleControl onClick={() => {setSelected(!selected); onActivateChange(id)}}/>

@@ -1,4 +1,5 @@
 import GridSymbol from "./GridSymbol";
+import styled from 'styled-components';
 
 declare interface GridProps { 
     gridState : boolean[], 
@@ -8,19 +9,21 @@ declare interface GridProps {
 
 const Grid = ({ gridState, onActivateChange }: GridProps) => {
 
-    const braileStyles= {
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr", 
-        gridTemplateRows: "1fr 1fr 1fr",
-        width: "auto",
-        alignContent: "start",
-    }
+    const GridContainer = styled.div `
+        background: #E9EAEF;
+        box-shadow: 8px 8px 32px rgba(188, 189, 199, 0.4);
+        border-radius: 20px;
+        width: 200px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 80px;
+
+    `;
+
 
     return (
-        <div>
-                {gridState.map( (el, idx) => <GridSymbol id={idx} value={el} onActivateChange={onActivateChange}/> )}
-        </div>
-
+        <GridContainer>{gridState.map( (el, idx) => <GridSymbol id={idx} value={el} onActivateChange={onActivateChange} /> )}</GridContainer>
     )
 }
 

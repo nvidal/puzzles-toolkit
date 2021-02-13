@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import Grid from "./Grid";
 import Result from "./Result";
+import styled from 'styled-components';
+
 
 const calculateResult = () => "A";
+
+const Container = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
 
 const Translator = () => {
 
@@ -21,8 +29,10 @@ const Translator = () => {
 
     return (
         <div>
+        <Container>
             <Grid gridState={braileSymbol} onActivateChange={onActivateChange}/>
             <Result value={result}/>
+        </Container>
         </div>
 
     )
