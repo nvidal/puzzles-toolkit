@@ -12,7 +12,7 @@ const Container = styled.div `
     border-radius: 20px;
     margin-top: 2em;
     min-width: 8em;
-    height: 4em;
+    min-height: 6em;
 `;
 
 const Result = ({value}: Props) => {
