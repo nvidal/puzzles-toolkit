@@ -9,6 +9,7 @@ const Container = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 4em;
 `;
 
 const Translator = () => {
@@ -20,7 +21,6 @@ const Translator = () => {
         let copy = braileSymbol;
         copy[id] = !copy[id];
         setBraileSymbol(copy);
-        console.log(braileSymbol);
 
         setResult(Calculator.calculateResult(braileSymbol));
     };
