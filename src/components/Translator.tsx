@@ -30,7 +30,7 @@ const Translator = () => {
         <div>
         <Container>
             <Grid gridState={braileSymbol} onActivateChange={onActivateChange}/>
-            <Result value={result}/>
+            <Result value={result} hints={Calculator.calculateHints(braileSymbol)}/>
         </Container>
         </div>
 

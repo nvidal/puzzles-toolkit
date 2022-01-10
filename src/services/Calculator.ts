@@ -36,6 +36,15 @@ export default class Calculator {
 
         let result = Alphablet.find(value => value.code.toString() === code);
 
-        return result ? result.character : "";
+        return result ? result.character : "--";
+    }
+
+    static calculateHints(symbol: boolean[]): string {
+        
+        let code = symbol.map((sym, index) => sym ? index + 1 : null).filter(value => value).join('');
+
+        let hints = Alphablet.filter(value => value.code.toString().includes(code)).map(e => e.character).join(' ');
+
+        return code ? hints : "";
     }
 }

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 declare interface Props { 
-    value : string
+    value: string,
+    hints: string  
 };
 
 const Container = styled.div `
@@ -15,11 +16,12 @@ const Container = styled.div `
     min-height: 6em;
 `;
 
-const Result = ({value}: Props) => {
+const Result = ({value, hints}: Props) => {
 
     return (
         <Container>
-            <h1>{value}</h1>
+            <h1> {value} </h1>
+            <h6>{hints}</h6>
         </Container>
     )
 }
